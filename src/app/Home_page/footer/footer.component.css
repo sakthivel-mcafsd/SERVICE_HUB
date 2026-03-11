@@ -1,0 +1,32 @@
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+ 
+/* Footer */
+.footer-section {
+  background-color: #0f172a;
+}
+ 
+.footer-links li {
+  color: #9ca3af;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.footer-links{
+  color: #9ca3af;
+  margin-bottom: 0px;
+  cursor: pointer;
+}
+/* .footer-links:hover {
+  color: #ffffff;
+} */
+ 
+.footer-links li:hover {
+  color: #ffffff;
+}
+ 
+.footer-divider {
+  border-color: #576789;
+}
+ 

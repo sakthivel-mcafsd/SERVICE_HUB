@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm   navbar-light bg-white shadow-sm px-3 py-2">
+
+  <!-- Brand -->
+  <div class="navbar-brand d-flex justify-content-center align-items-center gap-2">
+    <div class="logo">
+      <img src="assets/Logo.png"
+           alt="LOGO"
+           id="logo_img">
+    </div>
+    <div class="nav gap-1 d-flex justify-content-center align-items-center">
+        <strong>ServiceHub</strong>
+        <span class="provide">Provider Dashboard</span>
+    </div>
+  </div>
+  <!-- Small Toggle Button -->
+  
+  
+  <div class="ms-auto d-flex justify-content-center align-items-center">
+    <span class="badge bg-light text-dark px-3 py-2   " id="nav1">
+      Wellcome, <strong style="color: #5b4cf3;">{{ userName }}</strong>
+    </span>
+    <button class="navbar-toggler ps-2"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent" id="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav  d-flex justify-content-end">
+          <li class="nav-item ms-2" >
+              <button class="btn btn-outline-danger btn-sm p-1" routerLink="/login">
+                  <i class="bi bi-box-arrow-right"></i> Logout
+              </button>
+          </li>
+        </ul>
+    </div>
+  </div>
+  
+</nav>
+
+<router-outlet></router-outlet>

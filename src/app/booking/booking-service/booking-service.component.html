@@ -1,0 +1,68 @@
+<div class="container mt-5">
+  <h1 class="fw-bold">Book a Service</h1>
+  <p class="text-muted">Professional home services at your fingertips</p>
+
+  <!-- Search -->
+  <div class="card p-3 shadow-sm rounded-4 mt-4">
+    <div class="row g-2 align-items-center">
+      <div class="col-md-10">
+        <input
+          type="text"
+          class="form-control form-control-lg"
+          placeholder="Search for services..."
+          [(ngModel)]="searchText"
+          (input)="onSearch()">
+      </div>
+      <div class="col-md-2 text-end">
+        <button class="btn btn-light w-100" (click)="openFilters()">
+          Filters
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popular Header -->
+  <div class="popular-banner mt-5 p-4 rounded-4 text-white">
+    <small>📈 Popular This Week</small>
+    <h3 class="fw-bold mt-1">Most Booked Services</h3>
+  </div>
+
+  <!-- Service Cards -->
+  <div class="row mt-4 g-4">
+    <div class="col-md-3 col-sm-6" *ngFor="let service of filteredServices">
+      <div class="card service-card h-100 border-0 rounded-4">
+
+        <div class="img-wrapper position-relative">
+          <img [src]="service.image" class="card-img-top">
+
+          <span class="position-absolute bottom-0 start-0 m-2 ToolIcon">
+            {{service.icon}}
+          </span>
+
+          <span *ngIf="service.popular"
+                class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">
+            ⭐ Popular
+          </span>
+        </div>
+
+        <div class="card-body text-start p-4">
+          <h5 class="fw-bold">{{ service.name }}</h5>
+          <p class="text-muted small">{{ service.description }}</p>
+
+          <div class="d-flex align-items-center mb-2">
+            ⭐ <strong class="ms-1">{{ service.rating }}</strong>
+            <span class="text-muted ms-2">({{ service.reviews }} reviews)</span>
+          </div>
+        </div>
+
+        <div class="card-footer bg-white border-0">
+          <button class="btn btn-primary w-100 rounded-3"
+                  (click)="bookService(service)">
+            Book Now
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

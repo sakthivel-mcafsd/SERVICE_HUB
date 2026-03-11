@@ -1,0 +1,85 @@
+<div class="login-wrapper">
+
+  <!-- Brand -->
+  <div class="brand text-center mb-4">
+    <div class="logo">
+      <img src="assets\Logo.png"
+           alt="LOGO"
+           id="logo_img">
+    </div>
+    <h2 class="fw-bold mt-2">ServiceHub</h2>
+    <p class="text-muted">On-Demand Home Services</p>
+  </div>
+
+  <!-- Login Card -->
+  <div class="card shadow-sm rounded-4 card-box1 w-100">
+    <div class="card-body p-4 p-md-5">
+
+      <h4 class="mb-3 text-center text-md-start">Login</h4>
+
+      <form [formGroup]="fg" (ngSubmit)="onLogin()" novalidate>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label class="form-label">Email Address</label>
+          <input type="email"
+                 class="form-control"
+                 placeholder="you@example.com"
+                 formControlName="email"
+                 [ngClass]="{'is-invalid':fg.get('email')?.invalid && fg.get('email')?.touched}" />
+          <div class="invalid-feedback"
+               *ngIf="fg.get('email')?.invalid && fg.get('email')?.touched">
+            Please enter email
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password"
+                 class="form-control"
+                 placeholder="••••••••"
+                 formControlName="password"
+                 [ngClass]="{'is-invalid':fg.get('password')?.invalid && fg.get('password')?.touched}" />
+          <div class="invalid-feedback"
+               *ngIf="fg.get('password')?.invalid && fg.get('password')?.touched">
+            Please enter password
+          </div>
+        </div>
+
+        <!-- Role -->
+        <!-- <div class="mb-3">
+          <label class="form-label">Login As</label>
+          <select class="form-select"
+                  formControlName="role"
+                  [ngClass]="{'is-invalid':fg.get('role')?.invalid && fg.get('role')?.touched}">
+            <option value="" disabled selected>Select role</option>
+            <option *ngFor="let role of roles" [value]="role">
+              {{ role }}
+            </option>
+          </select>
+        </div> -->
+
+        <!-- Button -->
+        <button type="submit" class="btn btn-primary w-100">
+          → Login
+        </button>
+
+      </form>
+
+      <p class="text-center small mt-3 mb-0">
+        Don’t have an account?
+        <a routerLink="/register" class="text-decoration-none">
+          Register here
+        </a>
+      </p>
+
+    </div>
+  </div>
+
+</div>
+<app-alert-popup 
+  *ngIf="showPopup"
+  [message]="message1"
+  [type]="res_type">
+</app-alert-popup>

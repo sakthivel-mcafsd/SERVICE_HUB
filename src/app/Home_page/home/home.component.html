@@ -1,0 +1,98 @@
+<header data-aos="fade-down" data-aos-duration="400">
+  <div class="nav-container">
+ 
+    <div class="logo"><a href="#hero" (click)="closeMenu()"> <div class="img-bg"><img src="assets\Logo.png" class="logo-icon"></div>ServiceHub</a></div>
+ 
+    <div class="menu-toggle" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+ 
+    <nav [class.active]="menuOpen">
+      <a class="nav-link" [routerLink]="[]" fragment="services">Services</a>
+      <a class="nav-link" [routerLink]="[]" fragment="howitworks">How It Works</a>
+      <a class="nav-link" [routerLink]="[]" fragment="feature">Features</a>
+      <a class="nav-link" routerLink="/login">Login</a>
+      <button class="btn " style="  background: linear-gradient(135deg, #5b4cf3, #7c3aed);">Get Started</button>
+    </nav>
+ 
+  </div>
+</header>
+ 
+<!-- HERO SECTION -->
+<section class="hero-section">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+ 
+      <!-- LEFT CONTENT -->
+      <div class="col-lg-6">
+        <span class="badge rounded-pill mb-3" style="color:#5b4cf3;">
+          #1 Home Services Platform
+        </span>
+ 
+        <h1 class="hero-title mt-3">
+          Professional Home Services
+          <span class="text" style="color:#5b4cf3;">At Your Fingertips</span>
+        </h1>
+ 
+        <p class="hero-text mt-3">
+          Connect with verified professionals for all your home service needs.
+          From plumbing to electrical work, we've got you covered.
+        </p>
+ 
+        <div class="d-flex gap-3 mt-4">
+          <button class="btn btn-lg text-white" style="background: linear-gradient(135deg, #5b4cf3, #7c3aed);">
+            Book a Service →
+          </button>
+          <button class="btn btn-outline-secondary btn-lg">
+            Learn More
+          </button>
+        </div>
+ 
+        <!-- STATS -->
+        <div class="row text-center mt-5">
+          <div class="col">
+            <h4 class="fw-bold" style="color:#5b4cf3;">10K+</h4>
+            <small class="text-muted">Happy Customers</small>
+          </div>
+          <div class="col">
+            <h4 class="fw-bold" style="color:#5b4cf3;">500+</h4>
+            <small class="text-muted">Service Providers</small>
+          </div>
+          <div class="col">
+            <h4 class="fw-bold" style="color:#5b4cf3;">50K+</h4>
+            <small class="text-muted">Services Completed</small>
+          </div>
+          <div class="col">
+            <h4 class="fw-bold" style="color:#5b4cf3;">4.9/5</h4>
+            <small class="text-muted">Average Rating</small>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- RIGHT IMAGE -->
+      <div class="col-lg-6 text-center position-relative">
+        <img
+          src="assets\Carpentry.jpg"
+          class="hero-img"
+          alt="Home Service" height="30%">
+ 
+        <!-- FLOATING CARD -->
+        <div class="floating-card shadow-sm">
+          <span class="check-icon">✔</span>
+          <div>
+            <strong>100% Satisfaction</strong>
+            <small class="d-block text-muted">Guaranteed Quality</small>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+ 
+</section>
+<app-our-services></app-our-services>
+<app-how-work></app-how-work>
+<app-feture></app-feture>
+<app-footer></app-footer>

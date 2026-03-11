@@ -1,0 +1,19 @@
+.feature-box {
+  padding: 20px;
+}
+ 
+.icon {
+  width: 52px;
+  height: 52px;
+  background: #eef2ff;
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  font-size: 22px;
+  margin: auto;
+}
+ body {
+  padding-top: 20px; /* navbar height */
+}

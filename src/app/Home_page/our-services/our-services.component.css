@@ -1,0 +1,131 @@
+/* ===== page ===== */
+body {
+  padding-top: 20px;
+  background: #ffffff;
+}
+
+/* ===== section spacing ===== */
+.container {
+  max-width: 1200px;
+}
+
+/* ===== service card ===== */
+.service-card {
+  border-radius: 20px !important;
+  overflow: hidden;
+  border: 1px solid #eef0f6 !important;
+  transition: all 0.28s ease;
+  background: #fff;
+  position: relative;
+}
+
+/* premium hover */
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: #5b4cf3 !important;
+  box-shadow: 0 20px 45px rgba(91, 76, 243, 0.18) !important;
+}
+
+/* ===== image wrapper ===== */
+.img-wrapper {
+  overflow: hidden;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.img-wrapper img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* smooth zoom */
+.service-card:hover .img-wrapper img {
+  transform: scale(1.12);
+}
+
+/* ===== icon box ===== */
+.icon-box {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  font-size: 22px;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.15);
+}
+
+/* ===== card body ===== */
+.card-body {
+  padding: 24px !important;
+}
+
+/* ===== book link ===== */
+.card-body a {
+  transition: all 0.2s ease;
+}
+
+.card-body a:hover {
+  letter-spacing: 0.3px;
+  color: #4338ca !important;
+}
+
+/* ===== nav links (if used) ===== */
+.nav-link {
+  color: #555;
+  font-weight: 500;
+}
+
+/* ===================================================== */
+/* 📱 RESPONSIVE IMPROVEMENTS */
+/* ===================================================== */
+
+/* large tablet */
+@media (max-width: 992px) {
+  .img-wrapper img {
+    height: 180px;
+  }
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .img-wrapper img {
+    height: 170px;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* mobile */
+@media (max-width: 576px) {
+
+  .img-wrapper img {
+    height: 160px;
+  }
+
+  .icon-box {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+  .card-body {
+    padding: 20px !important;
+  }
+
+  .service-card:hover {
+    transform: translateY(-3px);
+  }
+}

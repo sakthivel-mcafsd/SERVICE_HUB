@@ -1,0 +1,148 @@
+<div class="container py-4">
+
+  <!-- HEADER -->
+  <h2 class="fw-bold mb-1">Service Provider Dashboard</h2>
+  <p class="text-muted mb-4">
+    Manage your assigned bookings and accept new requests
+  </p>
+
+  <!-- STATS -->
+  <div class="row g-3 mb-4">
+
+    <div class="col-12 col-md-4">
+      <div class="card stat-card h-100">
+        <p class="text-muted mb-1">Total Bookings</p>
+        <h3 class="fw-bold mb-0">{{ totalBookings }}</h3>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4">
+      <div class="card stat-card h-100">
+        <p class="text-muted mb-1">In Progress</p>
+        <h3 class="fw-bold mb-0">{{ inProgress }}</h3>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4">
+      <div class="card stat-card h-100">
+        <p class="text-muted mb-1">Completed</p>
+        <h3 class="fw-bold mb-0">{{ completed }}</h3>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- AVAILABLE BOOKINGS -->
+
+  <h4 class="fw-bold mb-3">Available Bookings</h4>
+
+  <div *ngIf="availableBookings.length === 0" class="empty-box mb-4">
+    No available bookings
+  </div>
+
+  <div *ngFor="let booking of availableBookings" class="card booking-card mb-4">
+
+    <div class="row align-items-center">
+
+      <div class="col-12 col-md-9">
+
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+
+          <!-- FIX 1 -->
+          <h5 class="mb-0 fw-bold">{{ booking.service }}</h5>
+
+          <span class="badge border"
+                [ngClass]="getStatusClass(booking.status)">
+            {{ booking.status }}
+          </span>
+
+        </div>
+
+        <!-- FIX 2 -->
+        <p class="mb-1">
+          <strong>Customer:</strong> {{ booking.customer }}
+        </p>
+
+        <p class="text-muted mb-2">
+          {{ booking.description }}
+        </p>
+
+        <div class="text-muted small d-flex flex-wrap gap-3">
+          <span><i class="bi bi-calendar"></i> {{ booking.date }}</span>
+          <span><i class="bi bi-clock"></i> {{ booking.time }}</span>
+        </div>
+
+      </div>
+
+      <div class="col-12 col-md-3 text-md-end mt-3 mt-md-0">
+
+        <button class="btn btn-success w-100 w-md-auto px-4"
+                (click)="acceptBooking(booking.id)">
+          <i class="bi bi-person-check me-1"></i> Accept
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- MY ASSIGNED BOOKINGS -->
+
+  <h4 class="fw-bold mb-3 mt-4">My Assigned Bookings</h4>
+
+  <div *ngIf="myBookings.length === 0" class="empty-box">
+    No assigned bookings
+  </div>
+
+  <div *ngFor="let booking of myBookings" class="card booking-card mb-3">
+
+    <div class="row align-items-center">
+
+      <div class="col-12 col-md-9">
+
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+
+          <!-- FIX -->
+          <h5 class="mb-0 fw-bold">{{ booking.service }}</h5>
+
+          <span class="badge border"
+                [ngClass]="getStatusClass(booking.status)">
+            {{ booking.status }}
+          </span>
+
+        </div>
+
+        <p class="mb-1">
+          <strong>Customer:</strong> {{ booking.customer }}
+        </p>
+
+        <p class="text-muted mb-2">
+          {{ booking.description }}
+        </p>
+
+        <div class="text-muted small d-flex flex-wrap gap-3">
+          <span><i class="bi bi-calendar"></i> {{ booking.date }}</span>
+          <span><i class="bi bi-clock"></i> {{ booking.time }}</span>
+        </div>
+
+      </div>
+
+      <div class="col-12 col-md-3 text-md-end mt-3 mt-md-0">
+
+        <!-- FIX 3 -->
+        <button *ngIf="booking.status !== 'Completed'"
+                class="btn btn-purple w-100 w-md-auto px-4"
+                (click)="markCompleted(booking.id)">
+          <i class="bi bi-check-circle me-1"></i> Mark as Completed
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

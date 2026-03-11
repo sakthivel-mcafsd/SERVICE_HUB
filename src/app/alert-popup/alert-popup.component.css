@@ -1,0 +1,39 @@
+.alert-box{
+  position: fixed;
+  top: 40px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+ 
+.success{
+  background: #4CAF50;
+}
+ 
+.error{
+  background: #f44336;
+}
+ 
+.warning{
+  background: #ff9800;
+}
+ 
+ 
+.icon{
+  font-size: 18px;
+}
+ 
+.close{
+  margin-left: 10px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}

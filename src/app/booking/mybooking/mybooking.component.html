@@ -1,0 +1,171 @@
+<div class="container mt-4">
+
+  <a class="text-decoration-none text-primary fw-semibold" href="#">
+    ← Back to Services
+  </a>
+
+  <div class="d-flex justify-content-between align-items-center mt-3 flex-wrap gap-3">
+
+    <div>
+      <h2 class="fw-bold">My Bookings</h2>
+      <p class="text-muted">Track and manage all your service bookings</p>
+    </div>
+
+    <button class="btn btn-outline-secondary">
+      ⬇ Export
+    </button>
+
+  </div>
+
+  <!-- STATS -->
+
+  <div class="row mt-4 g-3 booking_count stat-grid">
+
+    <div class="col-xl col-lg col-md col-6">
+      <div class="stat-card"
+           (click)="setStatusFilter('All')"
+           [class.active-stat]="activeStatus === 'All'">
+        <h3>{{ totalBookings }}</h3>
+        <span>Total Bookings</span>
+      </div>
+    </div>
+
+    <div class="col-xl col-lg col-md col-6">
+      <div class="stat-card"
+           (click)="setStatusFilter('Pending')"
+           [class.active-stat]="activeStatus === 'Pending'">
+        <h3 class="text-warning">{{ getCount('Pending') }}</h3>
+        <span>Pending</span>
+      </div>
+    </div>
+
+    <div class="col-xl col-lg col-md col-6">
+      <div class="stat-card"
+           (click)="setStatusFilter('Assigned')"
+           [class.active-stat]="activeStatus === 'Assigned'">
+        <h3 class="text-primary">{{ getCount('Assigned') }}</h3>
+        <span>Assigned</span>
+      </div>
+    </div>
+
+    <div class="col-xl col-lg col-md col-6">
+      <div class="stat-card"
+           (click)="setStatusFilter('In Progress')"
+           [class.active-stat]="activeStatus === 'In Progress'">
+        <h3 class="text-purple">{{ getCount('In Progress') }}</h3>
+        <span>In Progress</span>
+      </div>
+    </div>
+
+    <div class="col-xl col-lg col-md col-6">
+      <div class="stat-card"
+           (click)="setStatusFilter('Completed')"
+           [class.active-stat]="activeStatus === 'Completed'">
+        <h3 class="text-success">{{ getCount('Completed') }}</h3>
+        <span>Completed</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SEARCH -->
+
+  <div class="card p-3 shadow-sm rounded-4 mt-4">
+
+    <input
+      type="text"
+      class="form-control form-control-lg"
+      placeholder="Search by service type or description..."
+      [(ngModel)]="searchText"
+      (input)="onSearch()">
+
+  </div>
+
+</div>
+
+
+<!-- BOOKINGS LIST -->
+
+<div class="container my-4">
+
+  <div class="booking-card mb-4"
+       *ngFor="let b of filteredBookings"
+       [ngClass]="{
+         'status-progress': b.status === 'In Progress',
+         'status-completed': b.status === 'Completed',
+         'status-pending': b.status === 'Pending',
+         'status-assigned': b.status === 'Assigned'
+       }">
+
+    <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+
+      <div>
+
+        <h5 class="fw-bold mb-1">
+
+          {{ b.service }}
+
+          <span class="status-chip ms-2"
+                [ngClass]="
+                  b.status === 'In Progress' ? 'chip-progress' :
+                  b.status === 'Pending' ? 'chip-pending' :
+                  b.status === 'Assigned' ? 'chip-assigned' :
+                  'chip-completed'
+                ">
+            {{ b.status }}
+          </span>
+
+        </h5>
+
+        <p class="text-muted mb-0">
+          {{ b.description }}
+        </p>
+
+      </div>
+
+      <span class="text-muted fs-4">⋮</span>
+
+    </div>
+
+    <!-- Booking Info -->
+
+    <div class="row mt-3 g-3">
+
+      <div class="col-md-4 info-box">
+        📅 <strong>{{ b.date }}</strong>
+      </div>
+
+      <div class="col-md-4 info-box">
+        ⏰ <strong>{{ b.time }}</strong>
+      </div>
+
+      <div class="col-md-4 info-box">
+        👤 <strong>{{ b.customer }}</strong>
+      </div>
+
+    </div>
+
+    <!-- Provider -->
+
+    <div class="provider-box mt-4"
+         *ngIf="b.status === 'Completed'">
+
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+
+        <div>
+          👷 <span class="text-muted">Service Provider</span><br>
+          <strong>{{ b.provider }}</strong>
+        </div>
+
+        <button class="btn btn-outline-secondary btn-sm"
+                (click)="contactProvider(b)">
+          📞 Contact
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

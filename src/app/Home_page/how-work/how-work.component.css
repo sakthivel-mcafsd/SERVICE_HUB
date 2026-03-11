@@ -1,0 +1,111 @@
+/* ===== section ===== */
+.how-it-work {
+  background: linear-gradient(180deg, #f6f8ff, #ffffff);
+  position: relative;
+}
+
+/* ===== container spacing ===== */
+.container {
+  max-width: 1150px;
+}
+
+/* ===== step card ===== */
+.step-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 30px;
+  height: 100%;
+  border: 1px solid #eef0f6;
+  transition: all 0.28s ease;
+  position: relative;
+}
+
+/* premium hover */
+.step-card:hover {
+  transform: translateY(-6px);
+  border-color: #4f46e5 !important;
+  box-shadow: 0 18px 40px rgba(79, 70, 229, 0.18) !important;
+}
+
+/* ===== step number ===== */
+.step-number {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.35);
+}
+
+/* ===== arrow ===== */
+.arrow {
+  font-size: 34px;
+  color: #6366f1;
+  font-weight: bold;
+  opacity: 0.7;
+  transition: all 0.25s ease;
+}
+
+/* arrow hover sync */
+.col-md-4:hover .arrow {
+  transform: translateX(6px);
+  opacity: 1;
+}
+
+/* ===== body ===== */
+body {
+  padding-top: 20px;
+  background-color: #f9fafb;
+}
+
+/* ===================================================== */
+/* 📱 RESPONSIVE IMPROVEMENTS */
+/* ===================================================== */
+
+/* tablet */
+@media (max-width: 992px) {
+  .arrow {
+    font-size: 28px;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+
+  .step-card {
+    text-align: center;
+    padding: 26px;
+  }
+
+  .step-number {
+    margin: 0 auto;
+  }
+
+  /* hide arrows on mobile */
+  .arrow {
+    display: none !important;
+  }
+
+  .how-it-work .row {
+    gap: 20px;
+  }
+}
+
+/* small mobile */
+@media (max-width: 576px) {
+
+  .step-card {
+    padding: 22px;
+  }
+
+  .step-number {
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+  }
+}

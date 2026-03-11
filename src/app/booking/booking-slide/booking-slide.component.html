@@ -1,0 +1,134 @@
+<div class="booking-page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="title">
+      <span class="icon">{{ selectedService.icon }}</span>
+      <div>
+        <b>{{ selectedService.name }}</b>
+        <p>{{ selectedService.description }}</p>
+      </div>
+    </div>
+
+    <!-- <div class="steps">
+      <span class="active">1</span>
+      <span class="active">2</span>
+      <span class="active">3</span>
+    </div> -->
+  </header>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- LEFT FORM -->
+    <div class="form-area">
+
+      <!-- SERVICE DETAILS -->
+      <section class="card">
+        <h2>Service Details</h2>
+
+        <label>Describe Your Issue *</label>
+        <textarea
+          [(ngModel)]="form.issue"
+          placeholder="Please provide detailed information about the issue you're experiencing...">
+        </textarea>
+
+        <small>The more details you provide, the better we can help</small>
+
+        <h3>Service Urgency</h3>
+        <div class="urgency">
+          <div
+            class="urgency-card"
+            [class.selected]="form.urgency === 'Standard'"
+            (click)="setUrgency('Standard')">
+            <b>Standard</b>
+            <p>3–5 business days</p>
+          </div>
+
+          <div
+            class="urgency-card"
+            [class.selected]="form.urgency === 'Priority'"
+            (click)="setUrgency('Priority')">
+            <b>Priority</b>
+            <p>1–2 business days</p>
+          </div>
+
+          <div
+            class="urgency-card"
+            [class.selected]="form.urgency === 'Emergency'"
+            (click)="setUrgency('Emergency')">
+            <b>Emergency</b>
+            <p>Same day</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DATE & TIME -->
+      <section class="card">
+        <h2>Choose Date & Time</h2>
+
+        <div class="row">
+          <input type="date" [(ngModel)]="form.date">
+          <input type="time" [(ngModel)]="form.time">
+        </div>
+
+        <div class="info">
+          ⏰ Our professionals will arrive within a 2-hour window of your selected time
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="card">
+        <h2>Contact & Location</h2>
+
+        <label>Service Address *</label>
+        <input type="text" [(ngModel)]="form.address" placeholder="Enter your complete address">
+
+        <label>Phone Number *</label>
+        <input type="text" [(ngModel)]="form.phone" placeholder="(555) 123-4567">
+
+        <label>Email Address</label>
+        <input type="email" [(ngModel)]="form.email" placeholder="john.doe@example.com">
+      </section>
+
+    </div>
+
+    <!-- RIGHT SUMMARY -->
+    <aside class="summary">
+      <h2>Booking Summary</h2>
+
+      <div class="summary-row">
+        <span>Service</span>
+        <b>{{selectedService.name}}</b>
+      </div>
+
+      <div class="summary-row">
+        <span>Urgency</span>
+        <b>{{ form.urgency }}</b>
+      </div>
+
+      <div class="summary-row">
+        <span>Date</span>
+        <b>{{ form.date || 'Not selected' }}</b>
+      </div>
+
+      <div class="summary-row">
+        <span>Time</span>
+        <b>{{ form.time || 'Not selected' }}</b>
+      </div>
+
+      <div class="summary-row">
+        <span>Price Range</span>
+        <b>$90 – $180</b>
+      </div>
+
+      <button (click)="confirmBooking()">Confirm Booking</button>
+    </aside>
+
+  </div>
+</div>
+<app-alert-popup 
+  *ngIf="showPopup"
+  [message]="message1"
+  [type]="res_type">
+</app-alert-popup>

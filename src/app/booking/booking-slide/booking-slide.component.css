@@ -1,0 +1,225 @@
+.booking-page {
+  font-family: Inter, sans-serif;
+  background: #f6f7fb;
+  min-height: 100vh;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  background: linear-gradient(90deg, #7a2cff, #5b3bff);
+  color: white;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* important for mobile */
+  gap: 16px;
+}
+
+.title {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.title .icon {
+  font-size: 28px;
+}
+
+/* ================= CONTENT LAYOUT ================= */
+
+.content {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  align-items: flex-start;
+}
+
+.form-area {
+  flex: 2;
+  min-width: 0;
+}
+
+.summary {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  height: fit-content;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* ================= CARD ================= */
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* ================= FORM ================= */
+
+textarea,
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin: 8px 0 16px;
+  font-size: 14px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+}
+
+.row input {
+  flex: 1;
+}
+
+/* ================= URGENCY ================= */
+
+.urgency {
+  display: flex;
+  gap: 12px;
+}
+
+.urgency-card {
+  flex: 1;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.urgency-card:hover {
+  transform: translateY(-2px);
+}
+
+.urgency-card.selected {
+  border: 2px solid #7a2cff;
+  background: #f3ecff;
+}
+
+/* ================= INFO ================= */
+
+.info {
+  background: #eef4ff;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* ================= SUMMARY ================= */
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+/* ================= BUTTON ================= */
+
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #7a2cff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: #6525d4;
+}
+
+/* ===================================================== */
+/* ================== TABLET VIEW ====================== */
+/* ===================================================== */
+
+@media (max-width: 1024px) {
+
+  .content {
+    flex-direction: column;
+  }
+
+  .summary {
+    width: 100%;
+  }
+
+}
+
+/* ===================================================== */
+/* ================== MOBILE VIEW ====================== */
+/* ===================================================== */
+
+@media (max-width: 768px) {
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .content {
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .urgency {
+    flex-direction: column;
+  }
+
+  .urgency-card {
+    width: 100%;
+  }
+
+  .summary {
+    width: 100%;
+  }
+
+}
+
+/* ===================================================== */
+/* ================= SMALL MOBILE ====================== */
+/* ===================================================== */
+
+@media (max-width: 480px) {
+
+  .header {
+    padding: 16px;
+  }
+
+  .title {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .title .icon {
+    font-size: 22px;
+  }
+
+  textarea,
+  input {
+    font-size: 13px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+
+}

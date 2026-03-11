@@ -1,0 +1,15 @@
+<div *ngIf="show" @popupAnimation class="alert-box" [ngClass]="type">
+ 
+  <span class="icon">
+ 
+    <span *ngIf="type==='success'"></span>
+    <span *ngIf="type==='error'"></span>
+    <span *ngIf="type==='warning'"></span>
+ 
+  </span>
+ 
+  <span class="message">{{message}}</span>
+ 
+  <button class="close" (click)="close()">✕</button>
+ 
+</div>
