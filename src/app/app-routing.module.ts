@@ -14,7 +14,8 @@ const routes: Routes = [
   // 🔹 Default route
   { path: '', component: HomeComponent }, 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent }, 
+  { path: 'home', component: HomeComponent },
+  
   // auth
   { path: 'login', component:LoginComponent},
   { path: 'register', component: RegisterComponent},
@@ -35,13 +36,17 @@ const routes: Routes = [
    { path: '**', redirectTo: 'home' }
   //User(bookink)
 ];
-const routerOptions: ExtraOptions = {
-  anchorScrolling: 'enabled',
-  scrollPositionRestoration: 'disabled', // 🔴 this is the KEY
-};
+// const routerOptions: ExtraOptions = {
+//   anchorScrolling: 'enabled',
+//   scrollPositionRestoration: 'disabled', // 🔴 this is the KEY
+// };
+
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,routerOptions)],
+  imports: [RouterModule.forRoot(routes, {
+    scrollPositionRestoration: 'top',   // ✅ important
+    anchorScrolling: 'enabled'          // ✅ for fragment scroll
+  })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

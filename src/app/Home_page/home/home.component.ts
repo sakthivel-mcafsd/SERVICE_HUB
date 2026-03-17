@@ -16,4 +16,14 @@ export class HomeComponent  {
   closeMenu() {
     this.menuOpen = false;
   }
+
+ scrollToSection(id: string) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+}
 }

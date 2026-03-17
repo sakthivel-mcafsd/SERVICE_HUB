@@ -3,84 +3,89 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background:#ffffff;
+  background: #ffffff;
   backdrop-filter: blur(6px);
 }
- 
-.logo a{
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  gap: 10px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #2c3e50;
-  letter-spacing: 0.5px;
-  transition: 0.3s;
-}
- 
-.img-bg{
-    background: linear-gradient(135deg, #5b4cf3, #372a4f);
-    border-radius: 10px;
-    width: 50px;
-    height: 50px;
-    margin-left: -20px;
-}
- 
-.logo-icon{
-  width: 100px;
-  height: 100px;
-  margin: -25px;
-  padding-top: 5px;
-  object-fit: contain;
-  padding: -100px;
-}
- 
- 
- 
- 
-.nav-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 14px 20px;
+
+/* CONTAINER FIX */
+.container {
+  width: 100%;              /* full width */
+  padding: 10px 12px;       /* reduced side spacing */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
- 
-/* NAV LINKS */
+
+/* LOGO FIX */
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 8px;                 /* reduced gap */
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* REMOVE NEGATIVE SPACE */
+.img-bg {
+  background: linear-gradient(135deg, #5b4cf3, #372a4f);
+  border-radius: 10px;
+  width: 40px;             
+  height: 40px;
+  margin: 0;           /* removed negative margin */
+  padding-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-icon {
+  width: 80px;             
+  height: 80px;
+  margin: 0;                /* removed negative margin */
+  object-fit: contain;
+}
+
+/* NAV */
 nav {
   display: flex;
-  gap: 30px;
+  gap: 30px;                /* reduced gap */
+  align-items: center;
 }
- 
+
 a {
-  color: #000000;
-  margin-left: 25px;
+  color: #000;
   text-decoration: none;
   font-weight: 400;
   transition: 0.3s;
+  margin-left: 0;           /* remove extra spacing */
 }
- 
+
 a:hover {
   color: #5b4bff;
 }
- 
+
+/* BUTTON FIX */
+.btn {
+  padding: 6px 14px;        /* reduced size */
+  font-size: 14px;
+}
+
 /* MOBILE MENU ICON */
 .menu-toggle {
   display: none;
   flex-direction: column;
   cursor: pointer;
 }
- 
+
 .menu-toggle span {
-  width: 25px;
+  width: 22px;
   height: 3px;
-  background: rgb(0, 0, 0);
-  margin: 4px 0;
+  background: #000;
+  margin: 3px 0;
   border-radius: 2px;
 }
- 
  
 .hero-section {
   padding-top: 120px;
@@ -142,7 +147,7 @@ a:hover {
     right: -100%;
      background: linear-gradient(180deg, #f0f2f8b7, #ffffffb5);
     width: 30%;
-    height: calc(38vh);
+    height: calc(30vh);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -163,11 +168,11 @@ a:hover {
  
   nav {
     position: fixed;
-    top: 80px;
+    top: 60px;
     right: -100%;
     background: linear-gradient(180deg, #f0f2f8b7, #ffffffb5);
     width: 30%;
-    height: calc(30vh);
+    height: calc(20vh);
     flex-direction: column;
     justify-content: center;
     align-items: center;

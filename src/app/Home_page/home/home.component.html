@@ -1,5 +1,5 @@
-<header data-aos="fade-down" data-aos-duration="400">
-  <div class="nav-container">
+<header>
+  <div class="container">
  
     <div class="logo"><a href="#hero" (click)="closeMenu()"> <div class="img-bg"><img src="assets\Logo.png" class="logo-icon"></div>ServiceHub</a></div>
  
@@ -10,11 +10,11 @@
     </div>
  
     <nav [class.active]="menuOpen">
-      <a class="nav-link" [routerLink]="[]" fragment="services">Services</a>
-      <a class="nav-link" [routerLink]="[]" fragment="howitworks">How It Works</a>
-      <a class="nav-link" [routerLink]="[]" fragment="feature">Features</a>
+      <a [routerLink]="[]" fragment="services" (click)="scrollToSection('services')">Services</a> 
+      <a [routerLink]="[]" fragment="howitworks" (click)="scrollToSection('howitworks')">How It Works</a>
+      <a [routerLink]="[]" fragment="features" (click)="scrollToSection('features')">Features</a>
       <a class="nav-link" routerLink="/login">Login</a>
-      <button class="btn " style="  background: linear-gradient(135deg, #5b4cf3, #7c3aed);">Get Started</button>
+      <button class="btn " routerLink="/register" style="  background: linear-gradient(135deg, #5b4cf3, #7c3aed);">Get Started</button>
     </nav>
  
   </div>
@@ -94,5 +94,5 @@
 </section>
 <app-our-services></app-our-services>
 <app-how-work></app-how-work>
-<app-feture></app-feture>
+<app-feature></app-feature>
 <app-footer></app-footer>

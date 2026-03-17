@@ -27,7 +27,8 @@
 }
 
 .logo img {
-  width: 42px;
+  width: 120px;
+  padding-top: 5px;
   height: auto;
 }
 

@@ -1,5 +1,7 @@
 /* ===== section ===== */
-.how-it-work {
+section {
+  scroll-margin-top: 80px; 
+  padding-top: 20px;
   background: linear-gradient(180deg, #f6f8ff, #ffffff);
   position: relative;
 }

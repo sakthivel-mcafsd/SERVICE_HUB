@@ -1,5 +1,6 @@
 /* ===== page ===== */
-body {
+section {
+  scroll-margin-top: 80px; /* adjust based on header height */
   padding-top: 20px;
   background: #ffffff;
 }

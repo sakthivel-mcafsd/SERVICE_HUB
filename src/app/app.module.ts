@@ -15,10 +15,10 @@ import { ServiceHomeComponent } from './service/service-home/service-home.compon
 import { AvailableBookingsComponent } from './service/available-bookings/available-bookings.component';
 import { MyAssignedBookingsComponent } from './service/my-assigned-bookings/my-assigned-bookings.component';
 import { FooterComponent } from './Home_page/footer/footer.component';
-import{FetureComponent} from './Home_page/feture/feture.component';
+import {FeatureComponent} from './Home_page/feature/feature.component';
 import { HomeComponent } from './Home_page/home/home.component';
 import { HowWorkComponent } from './Home_page/how-work/how-work.component';
-import{OurServicesComponent} from './Home_page/our-services/our-services.component';
+import {OurServicesComponent} from './Home_page/our-services/our-services.component';
 import { BookingSlideComponent } from './booking/booking-slide/booking-slide.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
@@ -37,7 +37,7 @@ import { AlertPopupComponent } from './alert-popup/alert-popup.component';
     MyAssignedBookingsComponent,
     FooterComponent,
     HomeComponent,
-    FetureComponent,
+    FeatureComponent,
     HowWorkComponent,
     OurServicesComponent,
     BookingSlideComponent,
