@@ -1,15 +1,18 @@
-.login-wrapper {
+/* ===== wrapper ===== */
+.register-wrapper {
   min-height: 100vh;
   background: #f5f7fb;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 20px;
   font-family: Arial, sans-serif;
 }
+
+/* ===== brand ===== */
 .brand {
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .logo {
@@ -33,6 +36,10 @@
   border-radius: 15px;
   width: 400px;
 }
+
+.card-body{
+  padding: 20px 20px 10px 20px;
+}
 .invite{
     font-weight: bold;
     font-family: inherit,Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -40,9 +47,8 @@
 .button1{
     border: 1px solid rgb(140, 135, 150);
     min-width: 45%;
-    padding: 7px;
+    padding: 5px;
     border-radius: 10px;
-    /* background: #ffffff; */
     cursor: pointer;
     transition: all 0.3s ease;
     background: #f5f5f5;
@@ -56,12 +62,7 @@
   color: white;
   box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
 }
-/* .button1:hover{
-    border: 2px solid blue;
-}
-.button1:focus {
-  background-color: #cce0ff;
-} */
+
 .btn-flex {
   display: flex;
   align-items: center;     /* vertical center */
@@ -74,15 +75,7 @@
     display: flex;
     justify-content: space-between;
 }
-/* .bottom_nav{
-    font-size: 10px;
-} */
-/* Media Query */
-/* @media (max-width: 768px) {
-  .card-box {
-    width: 90%;
-  }
-} */
+
 @media (max-width: 330px) {
   .bottom_nav{
     font-size: 14px;

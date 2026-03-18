@@ -19,28 +19,23 @@ const routes: Routes = [
   // auth
   { path: 'login', component:LoginComponent},
   { path: 'register', component: RegisterComponent},
-  {path:'booking',component:BookingHomeComponent,
+  { path:'booking',component:BookingHomeComponent,
     children:[
-      {path:'bookingpage',component:BookingServiceComponent},
-      {path:'mybooking',component:MybookingComponent},
-      {path:'slide/:id',component:BookingSlideComponent},
+      { path:'bookingpage',component:BookingServiceComponent},
+      { path:'mybooking',component:MybookingComponent},
+      { path:'slide/:id',component:BookingSlideComponent},
       { path: '', redirectTo: 'bookingpage', pathMatch: 'full' }
     ]
   },
-  {path:'service',component:ServiceHomeComponent,
+  { path:'service',component:ServiceHomeComponent,
     children:[{path:'service_body',component:AvailableBookingsComponent},
       { path: '', redirectTo: 'service_body', pathMatch: 'full' }
     ]
 
   },
    { path: '**', redirectTo: 'home' }
-  //User(bookink)
+  //User(booking)
 ];
-// const routerOptions: ExtraOptions = {
-//   anchorScrolling: 'enabled',
-//   scrollPositionRestoration: 'disabled', // 🔴 this is the KEY
-// };
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
