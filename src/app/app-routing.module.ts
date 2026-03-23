@@ -8,7 +8,10 @@ import { ServiceHomeComponent } from './service/service-home/service-home.compon
 import { BookingServiceComponent } from './booking/booking-service/booking-service.component';
 import { MybookingComponent } from './booking/mybooking/mybooking.component';
 import { BookingSlideComponent } from './booking/booking-slide/booking-slide.component';
-import { AvailableBookingsComponent } from './service/available-bookings/available-bookings.component';
+import { AvailableBookingsComponent} from './service/available-bookings/available-bookings.component';
+
+import {AssignedBookingsComponent} from './service/my-assigned-bookings/my-assigned-bookings.component';
+
 
 const routes: Routes = [
   // 🔹 Default route
@@ -28,13 +31,16 @@ const routes: Routes = [
     ]
   },
   { path:'service',component:ServiceHomeComponent,
-    children:[{path:'service_body',component:AvailableBookingsComponent},
+    children:[{ path:'service_body',component:AvailableBookingsComponent},
+      { path: 'assigned-bookings', component: AssignedBookingsComponent },
       { path: '', redirectTo: 'service_body', pathMatch: 'full' }
     ]
 
   },
+  
    { path: '**', redirectTo: 'home' }
   //User(booking)
+  
 ];
 
 @NgModule({

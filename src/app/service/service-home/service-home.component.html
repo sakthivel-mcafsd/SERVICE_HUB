@@ -1,41 +1,64 @@
-<nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm   navbar-light bg-white shadow-sm px-3 py-2">
+<header class="bg-white shadow-sm px-2 py-1">
+  <div class="container-fluid navbar-wrapper">
 
-  <!-- Brand -->
-  <div class="navbar-brand d-flex justify-content-center align-items-center gap-2">
-    <div class="logo">
-      <img src="assets/Logo.png"
-           alt="LOGO"
-           id="logo_img">
+    <!-- LEFT -->
+    <div class="logo d-flex align-items-center">
+      <a href="" (click)="closeMenu()" class="d-flex align-items-center text-decoration-none">
+        <div class="img-bg me-2">
+          <img src="assets/Logo.png" class="logo-icon">
+        </div>
+        ServiceHub
+      </a>
+      <span class="provide ms-3">Provider Dashboard</span>
     </div>
-    <div class="nav gap-1 d-flex justify-content-center align-items-center">
-        <strong>ServiceHub</strong>
-        <span class="provide">Provider Dashboard</span>
+
+    <!-- RIGHT -->
+    <div class="header-right">
+
+      <span class="badge bg-light text-dark px-3 py-2">
+        Welcome, <strong style="color: #5b4cf3;">{{ userName }}</strong>
+      </span>
+
+      <!-- DESKTOP MENU -->
+      <nav class="desktop-menu">
+        <a class="text-decoration-none"
+               [routerLink]="route ? 'bookingpage' : 'mybooking'"
+               (click)="routemethod()">
+              {{ route ? 'Book Service' : 'My Bookings' }}
+            </a>
+        <button class="btn btn-outline-danger px-2" routerLink="/login">
+          <i class="bi bi-box-arrow-right"></i> Logout
+        </button>
+      </nav>
+
+      <!-- MOBILE TOGGLE -->
+      <div class="menu-toggle" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
     </div>
+
   </div>
-  <!-- Small Toggle Button -->
-  
-  
-  <div class="ms-auto d-flex justify-content-center align-items-center">
-    <span class="badge bg-light text-dark px-3 py-2   " id="nav1">
-      Wellcome, <strong style="color: #5b4cf3;">{{ userName }}</strong>
-    </span>
-    <button class="navbar-toggler ps-2"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarContent" id="button">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav  d-flex justify-content-end">
-          <li class="nav-item ms-2" >
-              <button class="btn btn-outline-danger btn-sm p-1" routerLink="/login">
-                  <i class="bi bi-box-arrow-right"></i> Logout
-              </button>
-          </li>
-        </ul>
+
+  <!-- MOBILE SIDE MENU -->
+  <nav class="mobile-menu" [class.active]="menuOpen">
+
+    <div class="close-btn" (click)="closeMenu()">✕</div>
+
+    <a class="text-decoration-none"
+               [routerLink]="route ? 'bookingpage' : 'mybooking'"
+               (click)="routemethod()">
+              {{ route ? 'Book Service' : 'My Assigned Bookings' }}
+            </a>
+    <div class="text-center">
+      <button class="btn btn-outline-danger w-50 logout-btn" routerLink="/login">
+        <i class="bi bi-box-arrow-right"></i> Logout
+      </button>
     </div>
-  </div>
-  
-</nav>
+
+  </nav>
+</header>
 
 <router-outlet></router-outlet>

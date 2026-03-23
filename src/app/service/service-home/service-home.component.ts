@@ -16,4 +16,30 @@ export class ServiceHomeComponent {
   this.userName = this.user.name;
 
 }
+
+ menuOpen = false;
+ 
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+ 
+  closeMenu() {
+    this.menuOpen = false;
+  }
+
+  route:boolean=false
+  routemethod(){
+  this.route=!this.route
+  }
+
+  scrollToSection(id: string) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+}
+
 }

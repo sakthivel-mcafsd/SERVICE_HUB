@@ -1,51 +1,28 @@
-/* ===== cards ===== */
-
-.stat-card {
-  border-radius: 16px;
-  padding: 20px;
-  border: 1px solid #e9ecef;
+.page-title {
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
+/* CARD DESIGN */
 .booking-card {
-  border-radius: 16px;
+  background: #fff;
+  border-radius: 12px;
   padding: 20px;
-  border: 1px solid #e9ecef;
-  transition: 0.2s;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  border: 1px solid #eee;
 }
 
 .booking-card:hover {
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transform: translateY(-5px);
 }
 
-/* ===== empty state ===== */
-
-.empty-box {
-  border: 2px dashed #dee2e6;
-  border-radius: 14px;
-  padding: 30px;
-  text-align: center;
-  color: #6c757d;
-  background: #fafafa;
+/* ASSIGNED STYLE */
+.booking-card.assigned {
+  border-left: 5px solid #4e73df;
 }
 
-/* ===== purple button ===== */
-
-.btn-purple {
-  background: linear-gradient(135deg, #6f42c1, #5a2ea6);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-}
-
-.btn-purple:hover {
-  opacity: 0.9;
-  color: #fff;
-}
-
-/* ===== responsive fix ===== */
-
-@media (max-width: 768px) {
-  .booking-card {
-    padding: 16px;
-  }
+/* BUTTONS */
+.btn {
+  border-radius: 8px;
 }

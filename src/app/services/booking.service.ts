@@ -89,4 +89,24 @@ export class BookingService {
 
   }
 
+  //  private baseUrl = 'https://your-api-url.com/api/bookings';
+
+
+
+  // getAvailableBookings() {
+  //   return this.http.get(`${this.baseUrl}/available`);
+  // }
+
+  getAssignedBookings() {
+    return this.http.get(`${this.baseUrl}/assigned`);
+  }
+
+  // acceptBooking(id: number) {
+  //   return this.http.post(`${this.baseUrl}/accept/${id}`, {});
+  // }
+
+  // completeBooking(id: number) {
+  //   return this.http.post(`${this.baseUrl}/complete/${id}`, {});
+  // }
+
 }
