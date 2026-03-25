@@ -56,7 +56,7 @@ loadServices(): void {
       popular: true
     },
     {
-      id: 3,
+      id: 6,
       name: 'HVAC Service',
       description: 'Heating, cooling, and ventilation system services',
       image: '/assets/Maintanance.jpg',
@@ -64,7 +64,37 @@ loadServices(): void {
       rating: 4.7,
       reviews: 198,
       popular: false
-    }
+    },
+    {
+        id: 4,
+        name: 'Carpentry',
+        description: 'Custom woodwork, furniture repair, and installation',
+        image: 'assets/Corpenter.jpg',
+        icon: '🛠️',
+        rating: 4.6,
+        reviews: 156,
+        popular: false
+      },
+      {
+        id: 5,
+        name: 'Painting',
+        description: 'Interior and exterior painting by skilled professionals',
+        image: 'assets/painter pic.jpg',
+        icon: '🎨',
+        rating: 4.6,
+        reviews: 156,
+        popular: false
+      },
+      // {
+      //   id: 6,
+      //   name: 'Carpentry',
+      //   description: 'Custom woodwork, furniture repair, and installation',
+      //   image: 'assets/Carpentry.jpg',
+      //   icon: '🛠️',
+      //   rating: 4.6,
+      //   reviews: 156,
+      //   popular: false
+      // }
   ];
 }
       form = {

@@ -9,7 +9,6 @@ export class AuthService {
   getToken() {
   return localStorage.getItem('token');
 }
-    
     isLoggedIn(): boolean {
     
       const token = this.getToken();
@@ -57,4 +56,7 @@ export class AuthService {
   login(data: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/login`, data);
   }
+  verifyEmail(token: string): Observable<any> {
+  return this.http.get(`${this.baseUrl}/verify?token=${token}`);
+}
 }

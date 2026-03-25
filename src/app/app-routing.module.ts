@@ -9,38 +9,47 @@ import { BookingServiceComponent } from './booking/booking-service/booking-servi
 import { MybookingComponent } from './booking/mybooking/mybooking.component';
 import { BookingSlideComponent } from './booking/booking-slide/booking-slide.component';
 import { AvailableBookingsComponent} from './service/available-bookings/available-bookings.component';
-
 import {AssignedBookingsComponent} from './service/my-assigned-bookings/my-assigned-bookings.component';
-
+import{VerifyComponent} from'./auth/verify/verify.component';
 
 const routes: Routes = [
-  // 🔹 Default route
-  { path: '', component: HomeComponent }, 
+
+  // Default
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+
   { path: 'home', component: HomeComponent },
-  
-  // auth
-  { path: 'login', component:LoginComponent},
-  { path: 'register', component: RegisterComponent},
-  { path:'booking',component:BookingHomeComponent,
-    children:[
-      { path:'bookingpage',component:BookingServiceComponent},
-      { path:'mybooking',component:MybookingComponent},
-      { path:'slide/:id',component:BookingSlideComponent},
+
+  // Auth
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'verify', component: VerifyComponent },
+
+  // Booking
+  {
+    path: 'booking',
+    component: BookingHomeComponent,
+    children: [
+      { path: 'bookingpage', component: BookingServiceComponent },
+      { path: 'mybooking', component: MybookingComponent },
+      { path: 'slide/:id', component: BookingSlideComponent },
       { path: '', redirectTo: 'bookingpage', pathMatch: 'full' }
     ]
   },
-  { path:'service',component:ServiceHomeComponent,
-    children:[{ path:'service_body',component:AvailableBookingsComponent},
+
+  // Service
+  {
+    path: 'service',
+    component: ServiceHomeComponent,
+    children: [
+      { path: 'service_body', component: AvailableBookingsComponent },
       { path: 'assigned-bookings', component: AssignedBookingsComponent },
       { path: '', redirectTo: 'service_body', pathMatch: 'full' }
     ]
-
   },
-  
-   { path: '**', redirectTo: 'home' }
-  //User(booking)
-  
+
+  // Wildcard
+  { path: '**', redirectTo: 'home' }
+
 ];
 
 @NgModule({

@@ -1,0 +1,22 @@
+<div class="verify-container text-center mt-5">
+
+  <div *ngIf="isLoading">
+  <div class="spinner-border text-primary"></div>
+  <h5 class="mt-3">Verifying your account...</h5>
+</div>
+
+  <div *ngIf="!isLoading">
+    
+    <h4 [ngClass]="{'text-success': isSuccess, 'text-danger': !isSuccess}">
+      {{ message }}
+    </h4>
+
+    <button *ngIf="!isSuccess" 
+        class="btn btn-outline-secondary mt-3" 
+        routerLink="/register">
+         Try Again
+    </button>
+
+  </div>
+
+</div>

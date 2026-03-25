@@ -1,6 +1,6 @@
 <header class="bg-white shadow-sm px-2 py-1">
   <div class="container-fluid navbar-wrapper">
-
+ 
     <!-- LEFT -->
     <div class="logo d-flex align-items-center">
       <a href="" (click)="closeMenu()" class="d-flex align-items-center text-decoration-none">
@@ -11,14 +11,14 @@
       </a>
       <span class="provide ms-3">Provider Dashboard</span>
     </div>
-
+ 
     <!-- RIGHT -->
     <div class="header-right">
-
+ 
       <span class="badge bg-light text-dark px-3 py-2">
         Welcome, <strong style="color: #5b4cf3;">{{ userName }}</strong>
       </span>
-
+ 
       <!-- DESKTOP MENU -->
       <nav class="desktop-menu">
         <a class="text-decoration-none"
@@ -30,23 +30,23 @@
           <i class="bi bi-box-arrow-right"></i> Logout
         </button>
       </nav>
-
+ 
       <!-- MOBILE TOGGLE -->
       <div class="menu-toggle" (click)="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
       </div>
-
+ 
     </div>
-
+ 
   </div>
-
+ 
   <!-- MOBILE SIDE MENU -->
   <nav class="mobile-menu" [class.active]="menuOpen">
-
+ 
     <div class="close-btn" (click)="closeMenu()">✕</div>
-
+ 
     <a class="text-decoration-none"
                [routerLink]="route ? 'bookingpage' : 'mybooking'"
                (click)="routemethod()">
@@ -57,8 +57,8 @@
         <i class="bi bi-box-arrow-right"></i> Logout
       </button>
     </div>
-
+ 
   </nav>
 </header>
-
+ 
 <router-outlet></router-outlet>

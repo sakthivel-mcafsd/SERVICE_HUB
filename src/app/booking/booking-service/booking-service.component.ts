@@ -54,7 +54,7 @@ export class BookingServiceComponent implements OnInit {
         popular: true
       },
       {
-        id: 3,
+        id: 6,
         name: 'HVAC Service',
         description: 'Heating, cooling, and ventilation system services',
         image: 'assets/Maintanance.jpg',
@@ -84,7 +84,7 @@ export class BookingServiceComponent implements OnInit {
         popular: false
       },
       {
-        id: 6,
+        id: 4,
         name: 'Carpentry',
         description: 'Custom woodwork, furniture repair, and installation',
         image: 'assets/Carpentry.jpg',

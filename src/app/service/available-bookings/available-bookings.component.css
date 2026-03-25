@@ -2,7 +2,7 @@
   font-weight: 600;
   margin-bottom: 20px;
 }
-
+ 
 /* CARD DESIGN */
 .booking-card {
   background: #fff;
@@ -12,16 +12,16 @@
   transition: 0.3s;
   border: 1px solid #eee;
 }
-
+ 
 .booking-card:hover {
   transform: translateY(-5px);
 }
-
+ 
 /* ASSIGNED STYLE */
 .booking-card.assigned {
   border-left: 5px solid #4e73df;
 }
-
+ 
 /* BUTTONS */
 .btn {
   border-radius: 8px;

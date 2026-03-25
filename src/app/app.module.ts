@@ -13,7 +13,6 @@ import { BookingServiceComponent } from './booking/booking-service/booking-servi
 import { MybookingComponent } from './booking/mybooking/mybooking.component';
 import { ServiceHomeComponent } from './service/service-home/service-home.component';
 import { AvailableBookingsComponent } from './service/available-bookings/available-bookings.component';
-
 import { FooterComponent } from './Home_page/footer/footer.component';
 import {FeatureComponent} from './Home_page/feature/feature.component';
 import { HomeComponent } from './Home_page/home/home.component';
@@ -24,6 +23,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
 import { AlertPopupComponent } from './alert-popup/alert-popup.component';
 import {AssignedBookingsComponent} from './service/my-assigned-bookings/my-assigned-bookings.component';
+import { VerifyComponent } from './auth/verify/verify.component';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {AssignedBookingsComponent} from './service/my-assigned-bookings/my-assig
     OurServicesComponent,
     BookingSlideComponent,
     AlertPopupComponent,
+    VerifyComponent,
     
   ],
   imports: [

@@ -74,9 +74,9 @@ export class MybookingComponent implements OnInit {
         : this.bookings.filter(b => b.status === this.activeStatus);
 
     this.filteredBookings = statusFiltered.filter(b =>
-      b.service.toLowerCase().includes(text) ||
-      b.description.toLowerCase().includes(text)
-    );
+  (b.service?.toLowerCase().includes(text) || '') ||
+  (b.description?.toLowerCase().includes(text) || '')
+);
 
   }
 
