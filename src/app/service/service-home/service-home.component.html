@@ -22,7 +22,7 @@
       <!-- DESKTOP MENU -->
       <nav class="desktop-menu">
         <a class="text-decoration-none"
-               [routerLink]="route ? 'bookingpage' : 'mybooking'"
+               [routerLink]="route ? 'service_body' : 'assigned-bookings'"
                (click)="routemethod()">
               {{ route ? 'Book Service' : 'My Bookings' }}
             </a>
@@ -48,9 +48,9 @@
     <div class="close-btn" (click)="closeMenu()">✕</div>
  
     <a class="text-decoration-none"
-               [routerLink]="route ? 'bookingpage' : 'mybooking'"
+               [routerLink]="route ? 'service_body' : 'assigned-bookings'"
                (click)="routemethod()">
-              {{ route ? 'Book Service' : 'My Assigned Bookings' }}
+              {{ route ? 'Book Service' : 'My Bookings' }}
             </a>
     <div class="text-center">
       <button class="btn btn-outline-danger w-50 logout-btn" routerLink="/login">

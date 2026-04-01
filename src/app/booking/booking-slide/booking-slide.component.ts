@@ -56,7 +56,7 @@ loadServices(): void {
       popular: true
     },
     {
-      id: 6,
+      id: 3,
       name: 'HVAC Service',
       description: 'Heating, cooling, and ventilation system services',
       image: '/assets/Maintanance.jpg',

@@ -54,7 +54,7 @@ export class BookingServiceComponent implements OnInit {
         popular: true
       },
       {
-        id: 6,
+        id: 3,
         name: 'HVAC Service',
         description: 'Heating, cooling, and ventilation system services',
         image: 'assets/Maintanance.jpg',
@@ -83,16 +83,16 @@ export class BookingServiceComponent implements OnInit {
         reviews: 156,
         popular: false
       },
-      {
-        id: 4,
-        name: 'Carpentry',
-        description: 'Custom woodwork, furniture repair, and installation',
-        image: 'assets/Carpentry.jpg',
-        icon: '🛠️',
-        rating: 4.6,
-        reviews: 156,
-        popular: false
-      }
+      // {
+      //   id: 4,
+      //   name: 'Carpentry',
+      //   description: 'Custom woodwork, furniture repair, and installation',
+      //   image: 'assets/Carpentry.jpg',
+      //   icon: '🛠️',
+      //   rating: 4.6,
+      //   reviews: 156,
+      //   popular: false
+      // }
     ];
   }
 
