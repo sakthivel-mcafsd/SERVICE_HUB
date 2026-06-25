@@ -25,6 +25,14 @@ import { AlertPopupComponent } from './alert-popup/alert-popup.component';
 import {AssignedBookingsComponent} from './service/my-assigned-bookings/my-assigned-bookings.component';
 import { VerifyComponent } from './auth/verify/verify.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ChatComponent } from './chat/chat.component';
+import { ChatHeaderComponent } from './chat/chat-header/chat-header.component';
+import { MessageListComponent } from './chat/message-list/message-list.component';
+import { MessageBubbleComponent } from './chat/message-bubble/message-bubble.component';
+import { ChatInputComponent } from './chat/chat-input/chat-input.component';
+
+
+
 
 
 @NgModule({
@@ -47,6 +55,14 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     AlertPopupComponent,
     VerifyComponent,
     UserProfileComponent,
+    ChatComponent,
+    ChatHeaderComponent,
+    MessageListComponent,
+    MessageBubbleComponent,
+    ChatInputComponent,
+
+ 
+   
     
   ],
   imports: [

@@ -1,0 +1,23 @@
+<div
+class="bubble-wrapper"
+[ngClass]="{
+'user-wrapper':message.sender==='user',
+'provider-wrapper':message.sender==='provider'
+}">
+
+    <div
+    class="bubble"
+    [ngClass]="{
+    'user-bubble':message.sender==='user',
+    'provider-bubble':message.sender==='provider'
+    }">
+
+        <p>{{message.text}}</p>
+
+        <span class="time">
+            {{message.time}}
+        </span>
+
+    </div>
+
+</div>

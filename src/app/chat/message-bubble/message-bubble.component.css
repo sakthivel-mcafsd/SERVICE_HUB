@@ -1,0 +1,37 @@
+.bubble-wrapper{
+    display:flex;
+    margin-bottom:20px;
+    width:100%;
+}
+
+.user-wrapper{
+    justify-content:flex-end;
+}
+
+.provider-wrapper{
+    justify-content:flex-start;
+}
+
+.bubble{
+    max-width:45%;
+    padding:14px 18px;
+    border-radius:16px;
+    word-wrap:break-word;
+}
+
+.provider-bubble{
+    background:#fff;
+    border:1px solid #e5e5e5;
+}
+
+.user-bubble{
+    background:#f1ebff;
+}
+
+.time{
+    display:block;
+    text-align:right;
+    margin-top:8px;
+    font-size:12px;
+    color:#888;
+}

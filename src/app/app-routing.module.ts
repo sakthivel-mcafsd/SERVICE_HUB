@@ -12,6 +12,7 @@ import { AvailableBookingsComponent} from './service/available-bookings/availabl
 import {AssignedBookingsComponent} from './service/my-assigned-bookings/my-assigned-bookings.component';
 import{VerifyComponent} from'./auth/verify/verify.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ChatComponent } from './chat/chat.component';
 
 const routes: Routes = [
 
@@ -36,7 +37,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'bookingpage', pathMatch: 'full' },
     ]
   },
-
+  
   // Service
   {
     path: 'service',
@@ -47,7 +48,14 @@ const routes: Routes = [
       { path: '', redirectTo: 'service_body', pathMatch: 'full' }
     ]
   },
-   
+  //chat 
+  {
+    path: 'Chat',
+    component: ChatComponent,
+    },
+
+
+  // }
   // Profile
   { path: 'user-profile', component: UserProfileComponent },
   

@@ -27,12 +27,28 @@ export interface Booking {
 
 export interface UserProfile {
   id: number;
-  fullName: string;
+  name: string;
   email: string;
-  mobileNumber: string;
-  dateOfBirth: string;
-  gender: string;
   role: string;
+  gender: string;
+  dataOfBirth: string;
+  phoneNo: string;
   address: string;
-  location: string;
+}
+export interface UserProfileUpdate {
+  id: number;
+  name: string;
+  gender: string;
+  dataOfBirth: string;
+  phoneNo: string;
+  address: string;
+}
+export interface ChatMessage {
+  messageId: number;
+  bookingId: number;
+  senderId: number;
+  receiverId: number;
+  messageText: string;
+  sentAt: Date;
+  isRead: boolean;
 }

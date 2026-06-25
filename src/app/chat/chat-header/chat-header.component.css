@@ -1,0 +1,67 @@
+.chat-header{
+    background:#fff;
+    padding:15px 25px;
+    border-bottom:1px solid #eee;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.header-left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.back-btn{
+    border:none;
+    background:none;
+    font-size:22px;
+}
+
+.profile-img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.user-details h5{
+    margin:0;
+    font-weight:600;
+}
+
+.status-row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.online-dot{
+    width:8px;
+    height:8px;
+    background:#22c55e;
+    border-radius:50%;
+}
+
+.service-badge{
+    background:#ede9fe;
+    color:#7c3aed;
+    padding:3px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+.header-right{
+    display:flex;
+    gap:10px;
+}
+
+.icon-btn{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:1px solid #ddd;
+    background:#fff;
+}

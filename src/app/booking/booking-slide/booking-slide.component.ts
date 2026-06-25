@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {BookingService } from '../../services/booking.service';
+import { AuthService } from '../../services/auth.service';
 interface Service {
   id: number;
   name: string;
@@ -18,19 +19,24 @@ interface Service {
 })
 
 export class BookingSlideComponent {
-  constructor(private route: ActivatedRoute, private bookingService:BookingService) {}
+  constructor(private route: ActivatedRoute, private bookingService:BookingService,private authService:AuthService) {}
   message1: string = '';
   res_type!: 'success' | 'error' | 'warning';
   showPopup: boolean = false;
-
+  user: any;
+  Useremail:string=''
   selectedService!: Service;
   services: Service[] = [];
-   ngOnInit(): void {
 
+  ngOnInit(): void {
+  this.user = this.authService.getUser();
+
+  this.form.email = this.user.email;
+   console.log(this.form.email);
+  console.log(this.form);
   this.loadServices();
-  
-  const serviceId = Number(this.route.snapshot.paramMap.get('id'));
 
+  const serviceId = Number(this.route.snapshot.paramMap.get('id'));
   this.selectedService = this.services.find(s => s.id === serviceId)!;
 }
 loadServices(): void {
